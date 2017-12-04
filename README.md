@@ -1,2 +1,3 @@
-# advent-of-code-2017
-Javascript Solutions for Advent of Code 2017
+# Advent of Code 2017
+
+My javascript (userscript) solutions for [Advent of Code 2017](https://adventofcode.com/2017).
