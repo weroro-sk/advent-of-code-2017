@@ -1,3 +1,11 @@
+// ==UserScript==
+// @name         Advent of Code 2017 - Day 2 solution
+// @version      1.0.0
+// @author       Weroro
+// @match        http://adventofcode.com/2017/day/2/input
+// @grant        none
+// ==/UserScript==
+
 class Day2 {
 
     /**

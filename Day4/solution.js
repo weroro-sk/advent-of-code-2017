@@ -1,3 +1,11 @@
+// ==UserScript==
+// @name         Advent of Code 2017 - Day 4 solution
+// @version      1.0.0
+// @author       Weroro
+// @match        http://adventofcode.com/2017/day/4/input
+// @grant        none
+// ==/UserScript==
+
 class Day4 {
 
     /**
