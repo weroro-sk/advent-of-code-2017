@@ -44,7 +44,7 @@ class Day2 {
             /** @type {Array} */
             const blocks = r.split('\t');
             /** @type {Array} */
-            const cells = blocks.map(b => parseInt(b));
+            const cells = blocks.map(Number);
             for (let i = 0; i < cells.length; i++) {
                 for (let j = i + 1; j < cells.length; j++) {
                     if (cells[i] % cells[j] === 0 || cells[j] % cells[i] === 0) {

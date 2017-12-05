@@ -15,23 +15,20 @@ class Day5 {
         /** @type {string} */
         this.inputString = document.querySelector('pre').innerHTML.trim();
         /** @type {Array} */
-        this.inputDataArray = this.inputString.split('\n');
-        /** @type {Array} */
-        this.dataOne = this.inputDataArray.map(x => parseInt(x));
-        /** @type {Array} */
-        this.dataTwo = this.inputDataArray.map(x => parseInt(x));
+        this.inputDataArray = this.inputString.split('\n').map(Number);
     }
 
     /**
      * @returns {number}
      */
     partOne() {
+        let tempData = this.inputDataArray.slice();
         /** @type {number} */
         let count = 0;
         /** @type {number} */
         let offset = 0;
-        while (offset >= 0 && offset < this.dataOne.length) {
-            offset += this.dataOne[offset]++;
+        while (offset >= 0 && offset < tempData.length) {
+            offset += tempData[offset]++;
             count++;
         }
         return count;
@@ -41,15 +38,16 @@ class Day5 {
      * @returns {number}
      */
     partTwo() {
+        let tempData = this.inputDataArray.slice();
         /** @type {number} */
         let count = 0;
         /** @type {number} */
         let offset = 0;
-        while (offset >= 0 && offset < this.dataTwo.length) {
+        while (offset >= 0 && offset < tempData.length) {
             /** @type {number} */
             let tempOffset = offset;
-            offset += this.dataTwo[offset];
-            this.dataTwo[tempOffset] += this.dataTwo[tempOffset] >= 3 ? -1 : 1;
+            offset += tempData[offset];
+            tempData[tempOffset] += tempData[tempOffset] >= 3 ? -1 : 1;
             count++;
         }
         return count;
