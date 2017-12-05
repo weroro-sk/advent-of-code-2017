@@ -23,6 +23,7 @@ class Day5 {
      * @returns {number}
      */
     partOne() {
+        /** @type {Array} */
         let tempData = this.inputDataArray.slice();
         /** @type {number} */
         let count = 0;
@@ -39,6 +40,7 @@ class Day5 {
      * @returns {number}
      */
     partTwo() {
+        /** @type {Array} */
         let tempData = this.inputDataArray.slice();
         /** @type {number} */
         let count = 0;
