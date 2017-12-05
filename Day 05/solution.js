@@ -15,7 +15,11 @@ class Day5 {
         /** @type {string} */
         this.inputString = document.querySelector('pre').innerHTML.trim();
         /** @type {Array} */
-        this.inputData = this.inputString.split('\n').map(x => parseInt(x));
+        this.inputDataArray = this.inputString.split('\n');
+        /** @type {Array} */
+        this.dataOne = this.inputDataArray.map(x => parseInt(x));
+        /** @type {Array} */
+        this.dataTwo = this.inputDataArray.map(x => parseInt(x));
     }
 
     /**
@@ -26,8 +30,8 @@ class Day5 {
         let count = 0;
         /** @type {number} */
         let offset = 0;
-        while (offset >= 0 && offset < this.inputData.length) {
-            offset += this.inputData[offset]++;
+        while (offset >= 0 && offset < this.dataOne.length) {
+            offset += this.dataOne[offset]++;
             count++;
         }
         return count;
@@ -41,11 +45,11 @@ class Day5 {
         let count = 0;
         /** @type {number} */
         let offset = 0;
-        while (offset >= 0 && offset < this.inputData.length) {
+        while (offset >= 0 && offset < this.dataTwo.length) {
             /** @type {number} */
             let tempOffset = offset;
-            offset += this.inputData[offset];
-            this.inputData[tempOffset] += this.inputData[tempOffset] >= 3 ? -1 : 1;
+            offset += this.dataTwo[offset];
+            this.dataTwo[tempOffset] += this.dataTwo[tempOffset] >= 3 ? -1 : 1;
             count++;
         }
         return count;
