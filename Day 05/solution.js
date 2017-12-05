@@ -3,6 +3,7 @@
 // @version      1.0.0
 // @author       Weroro
 // @match        http://adventofcode.com/2017/day/5/input
+// @match        https://adventofcode.com/2017/day/5/input
 // @grant        none
 // ==/UserScript==
 
