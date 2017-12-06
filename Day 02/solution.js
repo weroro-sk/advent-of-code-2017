@@ -20,7 +20,7 @@ class Day2 {
     }
 
     /**
-     * @returns {Array}
+     * @returns {number}
      */
     partOne() {
         /** @type {Array} */
@@ -37,7 +37,7 @@ class Day2 {
     }
 
     /**
-     * @returns {Array}
+     * @returns {number}
      */
     partTwo() {
         /** @type {Array} */
@@ -53,6 +53,7 @@ class Day2 {
                     }
                 }
             }
+            return 0;
         });
         return differences.reduce((acc, cur) => acc + cur, 0);
     }
