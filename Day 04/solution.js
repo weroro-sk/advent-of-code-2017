@@ -10,13 +10,13 @@
 class Day4 {
 
     /**
-     *
+     * @constructor Day4
      */
     constructor() {
         /** @type {string} */
-        this.inputString = document.querySelector('pre').innerHTML.trim();
+        this.inputString = document.querySelector('pre').innerText.trim();
         /** @type {Array} */
-        this.rows = this.inputString.split('\n');
+        this.inputDataArray = this.inputString.split('\n');
     }
 
     /**
@@ -36,7 +36,7 @@ class Day4 {
     wordsCompare(wordsArray) {
         wordsArray.sort();
         /** @type {number} */
-        let len = wordsArray.length;
+        const len = wordsArray.length;
         for (let wordIndex = 0; wordIndex < len; wordIndex++) {
             if (wordIndex < len && wordsArray[wordIndex] === wordsArray[wordIndex + 1]) {
                 return false;
@@ -46,16 +46,16 @@ class Day4 {
     }
 
     /**
-     * @param {function|null} anagram
+     * @param {function|null} [anagram]
      * @returns {number}
      */
     getNumber(anagram = null) {
         /** @type {number} */
         let found = 0;
-        this.rows.map(wordsRow => {
+        this.inputDataArray.map(wordsRow => {
             /** @type {Array|*} */
             let wordsArray = wordsRow.split(' ');
-            if (anagram !== null) {
+            if (anagram !== null && typeof anagram === 'function') {
                 wordsArray = anagram(wordsArray);
             }
             if (this.wordsCompare(wordsArray)) {

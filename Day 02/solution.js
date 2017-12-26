@@ -10,13 +10,13 @@
 class Day2 {
 
     /**
-     *
+     * @constructor Day2
      */
     constructor() {
         /** @type {string} */
-        this.inputString = document.querySelector('pre').innerHTML.trim();
+        this.inputString = document.querySelector('pre').innerText.trim();
         /** @type {Array} */
-        this.rows = this.inputString.split('\n');
+        this.inputDataArray = this.inputString.split('\n');
     }
 
     /**
@@ -24,7 +24,7 @@ class Day2 {
      */
     partOne() {
         /** @type {Array} */
-        const differences = this.rows.map(r => {
+        const differences = this.inputDataArray.map(r => {
             /** @type {Array} */
             const cells = r.split('\t');
             /** @type {number} */
@@ -41,7 +41,7 @@ class Day2 {
      */
     partTwo() {
         /** @type {Array} */
-        const differences = this.rows.map(r => {
+        const differences = this.inputDataArray.map(r => {
             /** @type {Array} */
             const blocks = r.split('\t');
             /** @type {Array} */

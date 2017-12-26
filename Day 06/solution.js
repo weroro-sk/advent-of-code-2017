@@ -10,13 +10,13 @@
 class Day6 {
 
     /**
-     *
+     * @constructor Day6
      */
     constructor() {
         /** @type {string} */
-        this.inputString = document.querySelector('pre').innerHTML.trim();
+        this.inputString = document.querySelector('pre').innerText.trim();
         /** @type {Array.<Number>} */
-        this.data = this.inputString.split('\t').map(Number);
+        this.inputDataArray = this.inputString.split('\t').map(Number);
     }
 
     /**
@@ -59,7 +59,7 @@ class Day6 {
      */
     solver(secondPart = false) {
         /** @type {Array|[Number]} */
-        const blocks = this.data.slice();
+        const blocks = this.inputDataArray.slice();
         /** @type {Object} */
         const states = {};
         states[blocks.join('|')] = true;

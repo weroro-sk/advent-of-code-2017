@@ -10,25 +10,25 @@
 class Day3 {
 
     /**
-     *
+     * @constructor Day3
      */
     constructor() {
         /** @type {string} */
-        this.inputString = document.querySelector('pre').innerHTML.trim();
-        /** @type {number} */
-        this.inputNumericValue = parseInt(this.inputString);
+        this.inputString = document.querySelector('pre').innerText.trim();
+        /** @type {Number} */
+        this.inputNumericValue = +this.inputString;
     }
 
     /**
-     * @param {number} spiral
-     * @returns {Array|number}
+     * @param {Number} spiral
+     * @returns {Array|Number}
      */
     getDistance(spiral) {
         spiral = spiral % 1;
-        /** @type {[number,number,number,number]} */
-        let centers = [0.125, 0.375, 0.625, 0.875];
+        /** @type {[Number,Number,Number,Number]} */
+        const centers = [0.125, 0.375, 0.625, 0.875];
         for (let i in centers) {
-            /** @type {number} */
+            /** @type {Number} */
             let distI = Math.abs(spiral - centers[i]);
             if (distI <= 0.125)
                 return [distI, spiral < centers[i]];
@@ -38,12 +38,12 @@ class Day3 {
 
     /**
      * @param {Object} valueMatrix
-     * @param {number} positionX
-     * @param {number} positionY
-     * @returns {number}
+     * @param {Number} positionX
+     * @param {Number} positionY
+     * @returns {Number}
      */
     getValue(valueMatrix, positionX, positionY) {
-        /** @type {number} */
+        /** @type {Number} */
         let summary = 0;
         for (let x = positionX - 1; x <= positionX + 1; x++) {
             for (let y = positionY - 1; y <= positionY + 1; y++) {
@@ -56,15 +56,15 @@ class Day3 {
     }
 
     /**
-     * @returns {number}
+     * @returns {Number}
      */
     partOne() {
-        /** @type {number} */
-        let spiral = Math.sqrt(this.inputNumericValue / 4) - 0.5;
-        /** @type {number} */
-        let spiralNum = Math.ceil(spiral);
+        /** @type {Number} */
+        const spiral = Math.sqrt(this.inputNumericValue / 4) - 0.5;
+        /** @type {Number} */
+        const spiralNum = Math.ceil(spiral);
         let [distance, isNegativeFromCenter] = this.getDistance(spiral);
-        /** @type {number} */
+        /** @type {Number} */
         let offset = 8 * spiralNum * distance;
         if (isNegativeFromCenter) {
             offset = Math.ceil(offset);
@@ -73,18 +73,19 @@ class Day3 {
     }
 
     /**
-     * @returns {number}
+     * @returns {Number}
      */
     partTwo() {
-        let xPos, yPos, valueMatrix;
-        /** @type {number} */
-        xPos = yPos = 0;
+        /** @type {Number} */
+        let xPos = 0;
+        /** @type {Number} */
+        let yPos = 0;
         /** @type {Object} */
-        valueMatrix = {};
-        /** @type {number} */
+        const valueMatrix = {};
+        /** @type {Number} */
         valueMatrix[xPos + ',' + yPos] = 1;
         while (true) {
-            /** @type {number} */
+            /** @type {Number} */
             let val = this.getValue(valueMatrix, xPos, yPos);
             if (val >= this.inputNumericValue) {
                 return val;

@@ -10,12 +10,12 @@
 class Day5 {
 
     /**
-     *
+     * @constructor Day5
      */
     constructor() {
         /** @type {string} */
-        this.inputString = document.querySelector('pre').innerHTML.trim();
-        /** @type {Array} */
+        this.inputString = document.querySelector('pre').innerText.trim();
+        /** @type {Array.<Number>} */
         this.inputDataArray = this.inputString.split('\n').map(Number);
     }
 
@@ -24,7 +24,7 @@ class Day5 {
      */
     partOne() {
         /** @type {Array} */
-        let tempData = this.inputDataArray.slice();
+        const tempData = this.inputDataArray.slice();
         /** @type {number} */
         let count = 0;
         /** @type {number} */
@@ -41,7 +41,7 @@ class Day5 {
      */
     partTwo() {
         /** @type {Array} */
-        let tempData = this.inputDataArray.slice();
+        const tempData = this.inputDataArray.slice();
         /** @type {number} */
         let count = 0;
         /** @type {number} */

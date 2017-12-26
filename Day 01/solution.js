@@ -10,11 +10,11 @@
 class Day1 {
 
     /**
-     *
+     * @constructor Day1
      */
     constructor() {
         /** @type {string} */
-        this.inputString = document.querySelector('pre').innerHTML.trim();
+        this.inputString = document.querySelector('pre').innerText.trim();
     }
 
     /**
