@@ -14,7 +14,7 @@ class Day5 {
      */
     constructor() {
         /** @type {string} */
-        this.inputString = document.querySelector('pre').innerText.trim();
+        this.inputString = document.body.textContent.trim();
         /** @type {Array.<Number>} */
         this.inputDataArray = this.inputString.split('\n').map(Number);
     }

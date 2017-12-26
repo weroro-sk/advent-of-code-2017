@@ -14,7 +14,7 @@ class Day3 {
      */
     constructor() {
         /** @type {string} */
-        this.inputString = document.querySelector('pre').innerText.trim();
+        this.inputString = document.body.textContent.trim();
         /** @type {Number} */
         this.inputNumericValue = +this.inputString;
     }
