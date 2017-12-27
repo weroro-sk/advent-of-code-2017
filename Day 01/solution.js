@@ -48,7 +48,7 @@ class Day1 {
 /** @type {Day1} */
 let outputAnswer = new Day1();
 
-document.write(outputAnswer.partOne() + '<br>' + outputAnswer.partTwo());
+document.write(`${outputAnswer.partOne()}<br>${outputAnswer.partTwo()}`);
 
 console.log(outputAnswer.partOne());
 console.log(outputAnswer.partTwo());
